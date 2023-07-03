@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>singup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style_carrito.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: darkred;">
+      <a class="navbar-brand" href="#">
+        <img src="images/engranaje-y-llave-mecanica-de-servicio-icono-logo-vector-plano-concepto-diseno-2dh2kxr.jpg" alt="" class="logo">
+        TIENDA
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">INICIO <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Buscar..." aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">BUSCAR</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+
+    <div class="carrito" style="color: antiquewhite;">
+    <h1>Carrito de Compras</h1>
+    </div>
+    <form id="cart-form" style="color: antiquewhite;">
+      <label for="product-name">Nombre del producto:</label>
+      <input type="text" id="product-name">
+      <label for="product-price">Precio:</label>
+      <input type="number" id="product-price">
+      <button type="button" onclick="addToCart()">Agregar al carrito</button>
+    </form>
+    <div class="product-name" style="color: antiquewhite;">
+    <h2>Productos en el carrito:</h2>
+    </div>
+    <table id="cart-table" style="color: antiquewhite;">
+      <thead>
+        <tr>
+          <th>Nombre del producto</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total:</td>
+          <td id="cart-total">0</td>
+        </tr>
+      </tfoot>
+    </table>
+    <script>
+  
+      function addToCart() {
+        var productName = document.getElementById('product-name').value;
+        var productPrice = parseFloat(document.getElementById('product-price').value);
+        var cartItems = document.getElementById('cart-items');
+        var cartTotal = document.getElementById('cart-total');
+        
+  
+        var newRow = document.createElement('tr');
+        newRow.innerHTML = `<td>${productName}</td><td>${productPrice}</td>`;
+        cartItems.appendChild(newRow);
+        
+  
+        var total = parseFloat(cartTotal.textContent);
+        total += productPrice;
+        cartTotal.textContent = total;
+        
+  
+        document.getElementById('product-name').value = '';
+        document.getElementById('product-price').value = '';
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+/* Estilos generales */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background: linear-gradient(to right, #ff0000, #ca141492, #981616c8);
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: bold;
+}
+
+.logo{
+  width: 30px;
+  margin-left: 20px;
+  border-radius: 100%;
+}
+
+ul li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  color: darkred;
+}
+/* Estilos para el formulario de inicio de sesión */
+.form-login {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+h5 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: darkred;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: darkred;
+}
+
+a:hover {
+  text-decoration: underline;
+}
